@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - My Watchlist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <img src="assets/logo.png" alt="Logo" class="logo">
+      <select id="languageSelector">
+        <option value="en" selected>English</option>
+        <option value="hi">हिन्दी</option>
+      </select>
+      <button class="sign-in-btn" id="signInButton">Sign In</button>
+    </div>
+  </header>
+  <section class="hero">
+    <h1 id="title">My Watchlist</h1>
+    <h2 id="subtitle">Favorites, Telugu, Trending, Series, and more.</h2>
+    <p id="description">Discover your favorite shows and movies, watch trailers, and read reviews curated by you.</p>
+    <div class="email-box">
+      <form id="loginForm">
+        <input type="email" id="emailInput" placeholder="Enter your email to login " required>
+        <input type="password" id="pwd" placeholder="Enter your password" required>
+        <button type="submit" class="get-started-btn" id="loginButton">Login</button>
+      </form>
+    </div>
+  </section>
+
+  <script src="script.js"> </script>
+</body>
+</html>

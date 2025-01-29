@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Watchlist - Home</title>
+  <link rel="stylesheet" href="home.css">
+</head>
+<body style="background-color: black;">
+  <header>
+    <div class="home-navbar">
+      <img src="home logo.jpg" alt="Logo">
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search movies, series, etc." oninput="search()">
+        <button onclick="search()">Search</button>
+      </div>
+      <!-- Genre Selection Dropdown -->
+      <div class="genre-dropdown">
+        <label for="genreSelect">Choose a Genre: </label>
+        <select id="genreSelect" onchange="filterMovies()">
+          <option value="all">All</option>
+          <option value="action">Action</option>
+          <option value="crime-thriller">Crime/Thriller</option>
+          <option value="comedy">Comedy</option>
+          <option value="love">Love</option>
+          <option value="romance">Romance</option>
+          <option value="games">Games</option>
+          <option value="horror">Horror</option>
+          <option value="korean">Korean</option>
+        </select>
+      </div>
+      <button class="sign-out-btn" onclick="logout()">Sign Out</button>
+    </div>
+  </header>
+
+  <section class="genre-section" data-genre="action">
+    <h2>Action</h2>
+    <div class="movie-grid">
+      <div class="movie-card" data-movie="Animal">
+        <img src="assets/animal.jpg" alt="Animal" onclick="showMovieDetails('Animal')">
+        <p>Animal</p>
+      </div>
+      <div class="movie-card" data-movie="Devara">
+        <img src="assets/devara.jpg" alt="Devara" onclick="showMovieDetails('devara')">
+        <p>Devara</p>
+      </div>
+      <div class="movie-card" data-movie="Leo">
+        <img src="assets/leo.jpg" alt="Leo" onclick="showMovieDetails('leo')">
+        <p>Leo</p>
+      </div>
+      <div class="movie-card" data-movie="Jigra">
+        <img src="assets/jigra.jpg" alt="Jigra" onclick="showMovieDetails('jigra')">
+        <p>Jigra</p>
+      </div>
+      <div class="movie-card" data-movie="Salaar">
+        <img src="assets/salaar.jpg" alt="Salaar" onclick="showMovieDetails('salaar')">
+        <p>Salaar</p>
+      </div>
+
+      <!-- Add other movie cards similarly -->
+    </div>
+  </section>
+  <section class="genre-section" data-genre="crime-thriller">
+    <h2>Crime/Thriller</h2>
+    <div class="movie-grid">
+      <div class="movie-card" onclick="showMovieDetails('Dark Desire')">
+        <img src="assets/dark desire.jpg" alt="Crime Thriller 1">
+        <p>Dark Desire</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('Lucky Bhasker')">
+        <img src="assets/lucky bhasker.jpg" alt="Crime Thriller 2">
+        <p>Lucky Bhasker</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('Stranger Things')">
+        <img src="assets/stranger things.jpg" alt="Crime Thriller 3">
+        <p>Stranger Things</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('Wednesday')">
+        <img src="assets/wednesday.jpg" alt="Crime Thriller 4">
+        <p>Wednesday</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('Major')">
+        <img src="assets/major.jpg" alt="Crime Thriller 5">
+        <p>Major</p>
+      </div>
+      <!-- Add more movies as needed -->
+    </div>
+  </section>
+  
+  <section class="genre-section" data-genre="comedy">
+    <h2>Comedy</h2>
+    <div class="movie-grid">
+      <div class="movie-card" onclick="showMovieDetails('Mathu Vadalara')">
+        <img src="assets/mathu vadalara.jpg" alt="Comedy Movie 1">
+        <p>Mathu Vadalara</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('Mad')">
+        <img src="assets/mad.jpg" alt="Comedy Movie 2">
+        <p>Mad</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('Aay')">
+        <img src="assets/aay.jpg" alt="Comedy Movie 3">
+        <p>Aay</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('F3')">
+        <img src="assets/f3.jpg" alt="Comedy Movie 4">
+        <p>F3</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('Never Have I Ever')">
+        <img src="assets/never ever i have.jpg" alt="Comedy Movie 5">
+        <p>Never Have I Ever</p>
+      </div>
+      <!-- Add more movies as needed -->
+    </div>
+  </section>
+  
+  <section class="genre-section" data-genre="love">
+    <h2>Love Movies</h2>
+    <div class="movie-grid">
+      <div class="movie-card" onclick="showMovieDetails('Amaran')">
+        <img src="assets/amaran.jpg" alt="Love Movie 1">
+        <p>Amaran</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('Love Today')">
+        <img src="assets/love today.jpg" alt="Love Movie 2">
+        <p>Love Today</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('Hi Nanna')">
+        <img src="assets/hi nanna.jpg" alt="Love Movie 3">
+        <p>Hi Nanna</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('Don')">
+        <img src="assets/don.jpg" alt="Love Movie 4">
+        <p>Don</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('Shyam')">
+        <img src="assets/shyam.jpg" alt="Love Movie 5">
+        <p>Shyam</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('Ranga Ranga Vaibhavanga')">
+        <img src="assets/ranga.jpg" alt="Love Movie 6">
+        <p>Ranga Ranga Vaibhavanga</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('Uppena')">
+        <img src="assets/uppena.jpg" alt="Love Movie 7">
+        <p>Uppena</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('The Most Eligible Bachelor')">
+        <img src="assets/most.jpg" alt="Love Movie 8">
+        <p>The Most Eligible Bachelor</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('Kushi')">
+        <img src="assets/kushi.jpg" alt="Love Movie 9">
+        <p>Kushi</p>
+      </div>
+      <!-- Add more love movies here -->
+    </div>
+  </section>
+  
+  <section class="genre-section" data-genre="romance">
+    <h2>Romance</h2>
+    <div class="movie-grid">
+      <div class="movie-card" onclick="showMovieDetails('After')">
+        <img src="assets/after.jpg" alt="Romance Movie 1">
+        <p>After</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('365 Days')">
+        <img src="assets/365 days.jpg" alt="Romance Movie 2">
+        <p>365 Days</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('The Tearsmith')">
+        <img src="assets/the tearsmith.jpg" alt="Romance Movie 3">
+        <p>The Tearsmith</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('50 Shades')">
+        <img src="assets/50 shades.jpg" alt="Romance Movie 4">
+        <p>50 Shades</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('Through My Window')">
+        <img src="assets/through my window.jpg" alt="Romance Movie 5">
+        <p>Through My Window</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('Mismatched')">
+        <img src="assets/mismatched.jpg" alt="Romance Movie 6">
+        <p>Mismatched</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('Purple Hearts')">
+        <img src="assets/purplr hearts.jpg" alt="Romance Movie 7">
+        <p>Purple Hearts</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('XO Kitty')">
+        <img src="assets/kitty.jpg" alt="Romance Movie 8">
+        <p>XO Kitty</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('The Kissing Booth')">
+        <img src="assets/kissing.jpg" alt="Romance Movie 9">
+        <p>The Kissing Booth</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Games Section -->
+  <section class="genre-section" data-genre="games">
+    <h2>Games</h2>
+    <div class="movie-grid">
+      <div class="movie-card" onclick="showMovieDetails('Alice In BorderLand')">
+        <img src="assets/alice.jpg" alt="Game 1">
+        <p>Alice In BorderLand</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('All Of Us Dead')">
+        <img src="assets/all of us dead.jpg" alt="Game 2">
+        <p>All Of Us Dead</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('Squid Game')">
+        <img src="assets/squid game.jpg" alt="Game 3">
+        <p>Squid Game</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('The 8 Show')">
+        <img src="assets/8 show.jpg" alt="Game 4">
+        <p>The 8 Show</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('Sweet Home')">
+        <img src="assets/sweet home.jpg" alt="Game 5">
+        <p>Sweet Home</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Horror Section -->
+  <section class="genre-section" data-genre="horror">
+    <h2>Horror</h2>
+    <div class="movie-grid">
+      <div class="movie-card" onclick="showMovieDetails('Virupaksha')">
+        <img src="assets/virupaksha.jpg" alt="Horror Movie 1">
+        <p>Virupaksha</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('Shaithan')">
+        <img src="assets/shaithan.jpg" alt="Horror Movie 2">
+        <p>Shaithan</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('Vampire Diaries')">
+        <img src="assets/vampair.jpg" alt="Horror Movie 3">
+        <p>Vampire Diaries</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('Ghost Stories')">
+        <img src="assets/ghost.jpg" alt="Horror Movie 4">
+        <p>Ghost Stories</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('Annabelle')">
+        <img src="assets/anebella.jpg" alt="Horror Movie 5">
+        <p>Annabelle</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('The Conjuring')">
+        <img src="assets/conjuring.jpg" alt="Horror Movie 6">
+        <p>The Conjuring</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('It')">
+        <img src="assets/it.jpg" alt="Horror Movie 7">
+        <p>It</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('Kumari')">
+        <img src="assets/kumari.jpg" alt="Horror Movie 8">
+        <p>Kumari</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('Alive')">
+        <img src="assets/alive.jpg" alt="Horror Movie 9">
+        <p>Alive</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Korean Section -->
+  <section class="genre-section" data-genre="korean">
+    <h2>Korean Dramas</h2>
+    <div class="movie-grid">
+      <div class="movie-card" onclick="showMovieDetails('Hidden Love')">
+        <img src="assets/hidden love.jpg" alt="Korean Drama 1">
+        <p>Hidden Love</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('Queen Of Tears')">
+        <img src="assets/queen of tears.jpg" alt="Korean Drama 2">
+        <p>Queen Of Tears</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('My Demon')">
+        <img src="assets/my demon.jpg" alt="Korean Drama 3">
+        <p>My Demon</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('Nevertheless')">
+        <img src="assets/neverth.jpg" alt="Korean Drama 4">
+        <p>Nevertheless</p>
+      </div>
+      <div class="movie-card" onclick="showMovieDetails('True Beauty')">
+        <img src="assets/true.jpg" alt="Korean Drama 5">
+        <p>True Beauty</p>
+      </div>
+    </div>
+  </section>
+
+<div class="modal" style="display:none;">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeModal()">&times;</button>
+    <div id="modal-details"></div>
+  </div>
+</div>
+<script src="home.js"></script>
+
+</body>
+</html>
